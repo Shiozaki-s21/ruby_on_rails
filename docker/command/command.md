@@ -32,6 +32,8 @@ docker-compose run --rm web rails g scaffold Micropost content:text user_id:inte
 docker-compose run --rm web rake db:migrate
 ---
 
+
+
 #Dockerでrailsコマンド実行
 > docker-compose run app rails [rails_command]
 ---
