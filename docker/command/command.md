@@ -15,17 +15,23 @@
 > docker-compose run --rm web rails g scaffold item name:string amount:integer memo:text
 > docker-compose run web rails g scaffold User name:string email:string
 > docker-compose run --rm web rake db:migrate
----
 
-#
 docker-compose run --rm web rails g scaffold User name:string email:string
 docker-compose run --rm web rake db:migrate
 db:migrate RAILS_ENV=development
 
+#結局これが通った
 docker-compose run --rm web rails g scaffold item name:string amount:integer memo:text
 docker-compose run --rm web rails g scaffold User name:string email:string
                             rails g scaffold user name:string age:integer
 docker-compose run --rm web rake db:migrate
 ---
+
+#Microposts作成コマンド
+docker-compose run --rm web rails g scaffold Micropost content:text user_id:integer
+docker-compose run --rm web rake db:migrate
+---
+
 #Dockerでrailsコマンド実行
 > docker-compose run app rails [rails_command]
+---
